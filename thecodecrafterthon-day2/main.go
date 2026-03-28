@@ -19,15 +19,15 @@ func decimalToHexBin(num int64, base int) string {
 func baseConverter() {
 	for {
 		var val string
-		fmt.Print("Enter a value to convert: ")
+		fmt.Print("Enter the value you want to convert: ")
 		fmt.Scanln(&val)
 
 		var base string
-		fmt.Print("Enter the base of the value you entered (hex, bin, dec) or q to quit: ")
+		fmt.Print("Enter the base (hex, dec, bin) or quit: ")
 		fmt.Scanln(&base)
 
 		if base == "" || base == "0" {
-			fmt.Println("Base cannot be empty. Select a base next time")
+			fmt.Println("Base cannot be empty")
 			continue
 		}
 
@@ -57,12 +57,12 @@ func baseConverter() {
 			fmt.Println("Binary:", decimalToHexBin(num, 2))
 			fmt.Println("Hex:", decimalToHexBin(num, 16))
 
-		case "q":
-			fmt.Println("Thank you for testing base converter")
+		case "quit":
+			fmt.Println("Thank you for testing the base converter")
 			return
 
 		default:
-			fmt.Println("Invalid base. Use hex, bin, dec, or q")
+			fmt.Println("Invalid base. Use hex, bin, dec, or quit")
 		}
 	}
 }
