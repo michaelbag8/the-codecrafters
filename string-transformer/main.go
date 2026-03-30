@@ -104,11 +104,12 @@ func stringTransformer() {
 	for {
 		fmt.Println("SENTINEL STRING TRANSFORMER — ONLINE")
 
-		fmt.Print("> ")
+		fmt.Print(">> ")
 		line, _ := reader.ReadString('\n')
 		line = strings.TrimSpace(line)
 
 		if line == "" {
+			fmt.Println("Please enter a valid command -- Usage: upper <text>")
 			continue
 		}
 
