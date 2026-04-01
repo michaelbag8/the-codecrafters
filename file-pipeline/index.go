@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"unicode"
 )
 
 type Stats struct {
@@ -221,3 +222,9 @@ func main() {
 
 	printSummary(stats)
 }
+
+
+
+
+
+

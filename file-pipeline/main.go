@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"path/filepath"
 )
 
 func upper(word string) string {
@@ -19,29 +20,34 @@ func todoReplace(word string)string{
 	return strings.ReplaceAll(word, "TODO", "ACTION")
 }
 
-func reverse(word string)string{
-	words := strings.Fields(word)
-	for i, w := range words{
-		runes := []rune(w)
-		for left, right := 0, len(runes)-1; left < right; left, right = left + 1, right-1{
-			runes[left], runes[right] = runes[right] , runes[left]
-		}
-		words[i] = string(runes)
-	}
-	return strings.Join(words," ")
-}
-
-func checkReserve(word string)string{
-	words := strings.Fields(word)
-	var result strings.Builder
-	for _, w := range words {
-		if w == "REVERSE"{
-		change := reverse(w)
-		result.WriteString(change)
-	}
-	 result.String()
+func reverseWords(line string) string {
+	words := strings.Fields(line)
+	for left, right := 0, len(words)-1; left < right; left, right = left+1, right-1 {
+		words[left], words[right] = words[right], words[left]
 	}
 	return strings.Join(words, " ")
+}
+
+func checkReverse(line string) string {
+	if strings.Contains(line, "REVERSE") {
+		return reverseWords(line)
+	}
+	return line
+}
+
+
+func sameFile(inputFile, outputFile string) (bool, error) {
+	absInput, err := filepath.Abs(inputFile)
+	if err != nil {
+		return false, err
+	}
+
+	absOutput, err := filepath.Abs(outputFile)
+	if err != nil {
+		return false, err
+	}
+
+	return absInput == absOutput, nil
 }
 
 func applyRules(inputFile, outputFile string) error {
