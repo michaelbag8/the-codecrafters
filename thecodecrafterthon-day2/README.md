@@ -1,8 +1,33 @@
 THE BASE CONVERTER
   Concept: Number Systems & strconv
 
- Rules:
-  → Write everything in Go. Standard library only.
+ How To Run The Program:
+  There are two ways to run the base converter 
+  1. Runing the .go file from it directory
+  ```bash
+      go run main.go
+  ```
+  There are 3 commands hex, bin and dec
+   ```bash
+      225 dec
+   ```
+   Output:
+  ```bash
+    Binary: 11100001
+    Hex: E1
+  ```
+2. Runing the executable file ``convert``
+```bash
+    ./convert
+```
+ ```bash
+      225 dec
+   ```
+   Output:
+  ```bash
+    Binary: 11100001
+    Hex: E1
+  ```
   → Must compile and run without errors.
   → Push to your the-codecrafters repo in a folder
     named: thecodecrafterthon-day2/
@@ -26,28 +51,4 @@ THE BASE CONVERTER
        ✦ Binary:  11111111
        ✦ Hex:     FF
 
-  Requirements:
-
-  → Support three input bases: hex, bin, dec.
-  → For dec input, output both binary and hex.
-  → For hex and bin input, output only decimal.
-  → All hex output must be uppercase.
-  → The program keeps running until: quit
-
-  Validation — handle all of these cleanly:
-  → "1G" is not valid hex.
-  → "10201" is not valid binary.
-  → "abc" is not a valid decimal.
-  → Negative numbers must be supported for dec.
-  → Empty input must not crash the program.
-
-  Think about:
-  → Which strconv functions handle base
-    conversions for you?
-  → How do you detect which characters are
-    valid for a given base?
-  → What is the difference between ParseInt
-    and ParseUint — and does it matter here?
-
-  ✦ Nail this and (hex) / (bin) in go-reloaded
-    becomes a 5-minute task.
+  

@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -17,23 +19,38 @@ func decimalToHexBin(num int64, base int) string {
 }
 
 func baseConverter() {
+	reader := bufio.NewReader(os.Stdin)
 	for {
-		var val string
-		fmt.Print("Enter the value you want to convert: ")
-		fmt.Scanln(&val)
 
-		var base string
-		fmt.Print("Enter the base (hex, dec, bin) or quit: ")
-		fmt.Scanln(&base)
+		fmt.Println("Base Converter - Online. The Usage: 255 dec")
+		fmt.Print(">> ")
 
-		if base == "" || base == "0" {
+		val, _ := reader.ReadString('\n')
+		val = strings.TrimSpace(val)
+
+		if val == "" {
+			fmt.Println("Invalid input. Use format: <value> <base>")
+			continue
+		}
+
+		txt := strings.Fields(val)
+
+		if len(txt) < 2 {
+			fmt.Println("Invalid input. Use format: <value> <base>")
+			continue
+		}
+
+		number := txt[0]
+		convert := strings.ToLower(txt[1])
+
+		if convert == "" || convert == "0" {
 			fmt.Println("Base cannot be empty")
 			continue
 		}
 
-		switch base {
+		switch convert {
 		case "hex":
-			num, err := toDecimal(val, 16)
+			num, err := toDecimal(number, 16)
 			if err != nil {
 				fmt.Println("Invalid hexadecimal number")
 				continue
@@ -41,7 +58,7 @@ func baseConverter() {
 			fmt.Println("Decimal:", num)
 
 		case "bin":
-			num, err := toDecimal(val, 2)
+			num, err := toDecimal(number, 2)
 			if err != nil {
 				fmt.Println("Invalid binary number")
 				continue
@@ -49,7 +66,7 @@ func baseConverter() {
 			fmt.Println("Decimal:", num)
 
 		case "dec":
-			num, err := strconv.ParseInt(val, 10, 64)
+			num, err := strconv.ParseInt(number, 10, 64)
 			if err != nil {
 				fmt.Println("Invalid decimal number")
 				continue
