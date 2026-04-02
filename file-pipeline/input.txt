@@ -1,14 +1,20 @@
-   ALERT LEVEL FIVE DETECTED IN NORTHERN SECTOR
-    TODO: confirm coordinates with Agent Bulus
-    classified: target has been relocated
-    -----------------------------------------------
-    the perimeter was breached at 03:47 local time
-       extra spaces were not cleaned before logging
-    CLASSIFIED: secondary site compromised
-    normal report line with no issues
-    todo: send backup to eastern checkpoint
-    EVERYTHING WAS FINE UNTIL IT WASN'T
-    another normal line from the field
-    classified: the director has been briefed
-    SHORT LINE
-    this line contains the word REVERSE in it so it gets special treatment
+field team reached checkpoint alpha at 0600 hours
+WE RECOVERED THREE DAMAGED CRATES FROM THE EASTERN RIDGE
+   TODO: inspect the water pumps before sunset   
+supply unit moved to sector 4 without delay
+REVERSE the convoy entered the gate quietly
+all personnel returned safely after patrol
+MISSION CONTROL REPORTED A TEMPORARY SIGNAL LOSS
+   the storage tent needs better ventilation   
+TODO: confirm the attendance of the backup crew
+weather conditions remained stable throughout the night
+REVERSE this report line should change order
+LOW FUEL WARNING WAS RECORDED NEAR THE HILLTOP CAMP
+equipment was cleaned and stored properly
+   TODO: replace damaged ropes in bay 3
+the scouts noticed unusual movement near the border
+EMERGENCY RESPONSE TEAM ARRIVED AT FIRST LIGHT
+all systems are running normally
+   REVERSE the samples were packed for transport   
+TODO: send final update to central command
+night patrol completed with no incident
